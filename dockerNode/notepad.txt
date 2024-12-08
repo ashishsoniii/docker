@@ -1,0 +1,107 @@
+docker build -t my-node-app:55.5 .
+
+
+docker run -p 8000:8000 my-node-app
+
+
+
+docker run -it ubuntu
+
+docker exec -it ubuntu_containerID
+
+
+
+```
+
+
+
+FROM node:18
+
+COPY . .
+
+
+# Install the dependencies
+RUN npm install
+
+
+
+# Command to run the application
+CMD ["node", "app.js"]
+
+
+
+```
+
+
+
+
+
+
+
+sudo usermod -aG docker sankalpie
+
+su - sankalpie
+
+To add user to docker sudoers list
+
+
+
+
+
+
+
+
+
+///////////////
+NOtes
+
+To run an image we do
+Docker pull
+Docker run {image_id} //do not use image_name, it can be confusing
+
+To run a container
+Docker start  hashID
+Docker stop hashID
+
+
+
+
+
+
+``````
+
+inside ubuntu 
+
+# Use an Ubuntu base image
+FROM ubuntu:22.04
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Install Node.js and other dependencies
+RUN apt-get update && \
+    apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy application files
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+# Expose the application port
+EXPOSE 8000
+
+# Command to run the application
+CMD ["node", "app.js"]
+
+
+
+
+
+
+
+
+``````
