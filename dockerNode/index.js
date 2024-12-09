@@ -7,7 +7,7 @@ const port = 8000;
 
 // Simple GET 
 app.get("/", (req, res) => {
-  res.json({ msg: "Hello ashish from docker!" });
+  res.json({ msg: "Hello from docker to lab exam!" });
 });
 // Simple GET request with query parameter
 app.get("/getWithQuery", (req, res) => {
